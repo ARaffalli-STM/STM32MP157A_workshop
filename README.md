@@ -176,26 +176,26 @@ Note: if command "repo init" returns "/usr/bin/env: ‘python’: No such file o
 
 ## 1. Using OpenSTLinux Distribution Package
 
-The STM32MP1 OpenSTLinux distribution is delivered through a manifest repository location and a manifest revision (*openstlinux-5.10-dunfell-mp1-21-03-31*)
+The STM32MP1 OpenSTLinux distribution is delivered through a manifest repository location and a manifest revision (*openstlinux-5.10-dunfell-mp1-21-11-17*)
 For the needs of this workshop, however, we are going to use a different reposity based on the official one with the additions of the layers related to the Microsoft® Azure IoTEdge packages and dependencies (meta-iotedge, meta-rust and meta-virtualization).
 
 
 1. Create your STM32MP15x Distribution Package directory & sub-directory
 
 > ```bash
-> PC $> mkdir -p $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop
+> PC $> mkdir -p $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop
 > ```
 
-2. Go to `$HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop` directory
+2. Go to `$HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop` directory
 
 > ```bash
-> PC $> cd $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop
+> PC $> cd $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop
 > ```
 
 3. The installation relies on the repo command. First initialize repo in the current directory
 
 > ```bash
-> PC $> repo init -u  https://github.com/ARaffalli-STM/wk-manifest.git -b refs/tags/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop-dk1-dk2
+> PC $> repo init -u  https://github.com/ARaffalli-STM/wk-manifest.git -b refs/tags/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop-dk1-dk2
 > ```
 
 4. Then synchronize the local project directories with the remote repositories specified in the manifest
@@ -209,7 +209,7 @@ For the needs of this workshop, however, we are going to use a different reposit
 The OpenSTLinux distribution installation directory is then populated with the "layers" directory:
 
 > ```
-> openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop  OpenSTLinux distribution with Microsoft® Azure IoTEdge workshop packages
+> openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop  OpenSTLinux distribution with Microsoft® Azure IoTEdge workshop packages
 > ├── layers 
 > │    ├── meta-openembedded                Collection of layers for the OpenEmbedded-Core universe (OpenEmbedded standard)
 > │    ├── meta-qt5                         QT5 layer for OpenEmbedded (standard)
@@ -254,7 +254,7 @@ The OpenSTLinux distribution installation directory is then populated with the "
 ==> The OpenEmbedded environment setup script must be run once in each new working terminal in which you use the BitBake or devtool tools
 
 > ```bash
-> PC $> cd $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop
+> PC $> cd $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop
 > PC $> DISTRO=openstlinux-weston MACHINE=stm32mp1-workshop source layers/meta-st/scripts/envsetup.sh
 > ```
 
@@ -270,7 +270,7 @@ Among other things, the environment setup script creates the **build directory**
 The local configuration file (*build-openstlinuxweston-stm32mp1-workshop/conf/local.conf*) contains all local user settings. The layers configuration file (*build-openstlinuxweston-stm32mp1/conf/bblayers.conf*) tells BitBake which layers must be considered during the build
 
 > ```
-> openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop	OpenSTLinux distribution
+> openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop	OpenSTLinux distribution
 > ├── build-openstlinuxweston-stm32mp1	Build directory
 > │   ├── conf
 > │   │   ├── bblayers.conf				Local configuration file
@@ -284,7 +284,7 @@ The local configuration file (*build-openstlinuxweston-stm32mp1-workshop/conf/lo
 
 3. Build the image
 
-   To build the image, execute the following command in the folder `$HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v2.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop/build-openstlinuxweston-stm32mp1-workshop`
+   To build the image, execute the following command in the folder `$HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v2.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop/build-openstlinuxweston-stm32mp1-workshop`
 
 *Note: This operation is taking a lot of time, between 4 to 6hours so we will not execute it, rather we will provide the output images that have been created in a USB flash drive and are inside the folder 4.OpenSTLinux_IoTEdge*
 
@@ -315,7 +315,7 @@ The local configuration file (*build-openstlinuxweston-stm32mp1-workshop/conf/lo
 1. Move to the compiled images directory
 
 > ```bash
-> PC $> cd $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop/tmp-glibc/deploy/images/stm32mp1-workshop/
+> PC $> cd $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop/tmp-glibc/deploy/images/stm32mp1-workshop/
 > ```
 
 2. Set the boot switches (located at the back of the board) to the off position
@@ -503,7 +503,7 @@ In addition, pins 5 and 6 of Arduino connector CN14 are used to manage LSM6DSL m
 ### 2.1 Kernel device tree configuration
 
 The kernel is already configured to support the the following 3 sensors on the X-NUCLEO-IKS01A3 sensor shield: lis2dw12 (accelerometer), lis2mdl (magnetometer) and hts221 (temperature and humidity sensor).
-This is done using the recipe  $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.0.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-03-31-st-workshop/layers/meta-st/meta-st-workshop/recipes-kernel/linux/linux-stm32mp_5.10.bbappend
+This is done using the recipe  $HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Distribution-Package/openstlinux-5.10-dunfell-mp1-21-11-17-st-workshop/layers/meta-st/meta-st-workshop/recipes-kernel/linux/linux-stm32mp_5.10.bbappend
 
 You may verify the availability of the 3 sensors using the following command:
 > ```bash
